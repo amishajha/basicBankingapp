@@ -1,0 +1,37 @@
+package com.example.bankingapp;
+
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class listhistory extends AppCompatActivity {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.list);
+        ListView listView;
+        listView = findViewById(R.id.listview);
+
+        ArrayList<String> transactions = new ArrayList<>();
+        database db  = new database(listhistory.this);
+
+        List<Transaction> transactionList = db.getAllTransactions();
+        for (Transaction transaction: transactionList) {
+            transactions.add("From: "+transaction.getS_name()+
+                    "\nTo: "+transaction.getR_name()+
+                    "\nAmount: "+transaction.getT_amt()+
+                    "\nTime: "+transaction.getDatetime()+
+                    "\nAvailable Balance: "+transaction.getS_acc());
+
+        }
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,transactions);
+        listView.setAdapter(arrayAdapter);
+    }
+    }
+

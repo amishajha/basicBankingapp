@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names_of_contact">
+        <item>Amisha Jha</item>
+        <item>kalyani Muske</item>
+        <item>Shefali singh</item>
+        <item>Bharvi chavda</item>
+        <item>vaibhavi dhumal</item>
+        <item>kirti vatsa</item>
+        <item>Rahul kumar</item>
+        <item>kiran kumar</item>
+        <item>Shruti Tiwari</item>
+        <item>Mihir dhanawde</item>
+        <item> Harsh kumar </item>
+
+
+
+        '
+
+
+    </string-array>
+</resources>
